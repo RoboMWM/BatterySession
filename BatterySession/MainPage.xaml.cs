@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Diagnostics;
 using Windows.Storage;
+using Windows.System.Power;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -94,6 +95,20 @@ namespace BatterySession
                 theStackPanel.Children.Add(block);
                 return;
             }
+        }
+    }
+
+    internal class LogEntry
+    {
+        private readonly DateTime dateTime;
+        private readonly BatteryStatus state;
+        private readonly int remainingMwh;
+
+        public LogEntry(DateTime dateTime, BatteryStatus state, int remainingMwh)
+        {
+            this.dateTime = dateTime;
+            this.state = state;
+            this.remainingMwh = remainingMwh;
         }
     }
 }
