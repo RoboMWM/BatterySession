@@ -37,7 +37,7 @@ namespace BatterySession
             {
                 StorageFolder localFolder = ApplicationData.Current.LocalFolder;
                 StorageFile sampleFile = await localFolder.GetFileAsync("BatteryLog.csv");
-                LogsTextBlock.Text = await FileIO.ReadTextAsync(sampleFile);
+                LogsTextBlock.Text = await FileIO.ReadTextAsync(sampleFile); //TODO: read backwards (LiFo)
             }
             catch (Exception e)
             {

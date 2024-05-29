@@ -46,11 +46,12 @@ namespace BackgroundTasks
 
                 try
                 {
-                    await FileIO.AppendTextAsync(file, content + await FileIO.ReadTextAsync(file));
+                    await FileIO.AppendTextAsync(file, content);
                 }
                 catch (Exception e)
                 {
-                    //SendToast("WriteText failed. ID " + taskId + " t: " + timeStamp + " e: " + e.Message);
+                    StorageFile errorFile = await localFolder.CreateFileAsync("Err-" + fileName, CreationCollisionOption.OpenIfExists);
+                    await FileIO.AppendTextAsync(errorFile, content);
                 }
             }
 

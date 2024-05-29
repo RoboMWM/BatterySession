@@ -50,8 +50,8 @@ namespace BatterySession
             //Is there a better way to validate the tasks have already been registered?
             if (BackgroundTaskRegistration.AllTasks.Count == 1)
             {
-                new LoggingChannel("BatterySession", new LoggingChannelOptions()).LogMessage("background task already registered, skipping");
-                Debug.WriteLine("background task already registered, skipping");
+                //new LoggingChannel("BatterySession", new LoggingChannelOptions()).LogMessage("background task already registered, skipping");
+                //Debug.WriteLine("background task already registered, skipping");
                 return;
             }
 

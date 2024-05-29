@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="ff06052c-fde0-422c-a1ff-ab48f8480bae" Publisher="CN=robom" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="ff06052c-fde0-422c-a1ff-ab48f8480bae" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="48031RoboMWM.514622E495981" Publisher="CN=23340718-5F2B-4B75-BC64-011F769563A6" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="a7a78d48-2965-4834-9b46-e882797a81f0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>BatterySession</DisplayName>
-    <PublisherDisplayName>robom</PublisherDisplayName>
+    <DisplayName>Battery Session</DisplayName>
+    <PublisherDisplayName>RoboMWM</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BatterySession.App">
-      <uap:VisualElements DisplayName="BatterySession" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="BatterySession" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="Battery Session" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="BatterySession" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
