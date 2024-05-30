@@ -12,9 +12,14 @@ namespace BackgroundTasks
 {
     public sealed class LogAndUpdateTile : IBackgroundTask
     {
-        public async void Run(IBackgroundTaskInstance taskInstance)
+        public void Run(IBackgroundTaskInstance taskInstance)
         {
             BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
+            asyncStuff(taskInstance, deferral);
+        }
+
+        private async void asyncStuff(IBackgroundTaskInstance taskInstance, BackgroundTaskDeferral deferral)
+        {
             string dateTime = DateTime.Now.ToString();
 
             BatteryReport batteryReport = Battery.AggregateBattery.GetReport();
