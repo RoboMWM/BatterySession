@@ -171,6 +171,12 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackgroundTasks\BackgroundTasks.csproj">
+      <Project>{15a55d79-3401-4eeb-a84a-d15bf800a9d9}</Project>
+      <Name>BackgroundTasks</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
