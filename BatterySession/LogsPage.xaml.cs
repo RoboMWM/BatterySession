@@ -41,7 +41,8 @@ namespace BatterySession
             }
             catch (Exception e)
             {
-                LogsTextBlock.Text = e.Message;
+                //LogsTextBlock.Text = e.Message;
+                LogsTextBlock.Text = "No data (plug/unplug events) recorded yet!";
             }
         }
     }
