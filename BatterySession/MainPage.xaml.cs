@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Background;
+using Windows.Devices.Power;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Diagnostics;
@@ -76,6 +77,7 @@ namespace BatterySession
         private async void lazyGiantUILoader()
         {
             TextBlock block = new TextBlock();
+            block.TextWrapping = TextWrapping.Wrap;
 
             IList<string> csvFile;
             try
@@ -91,7 +93,16 @@ namespace BatterySession
             }
             catch (Exception e)
             {
-                block.Text = "No logged data yet.";
+                BatteryReport batteryReport = Battery.AggregateBattery.GetReport();
+                Nullable<int> remainingMwh = batteryReport.RemainingCapacityInMilliwattHours;
+                if (remainingMwh == null || batteryReport.Status == BatteryStatus.NotPresent)
+                {
+                    block.Text = "No battery detected. Battery Session records when you plug, unplug, or otherwise change the powerstate of your device.";
+                }
+                else
+                {
+                    block.Text = "Welcome to Battery Session! Details of the last time you plugged or unplugged your device will be displayed here.";
+                }
                 theStackPanel.Children.Add(block);
                 return;
             }
